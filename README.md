@@ -33,7 +33,7 @@ Suggested changes to your server side code using JSP as an example:
 
 `
 
-		<% if(request.getServerName().equals("www.my-prod-url.com")){ %> 
+		<% if(request.getServerName().equals("dev.my-dev-url.com")){ %> 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link rel="stylesheet" href="/css/style-2x.css" type="text/css" />
         <link rel="stylesheet" href="/css/rwd.css" type="text/css" />
