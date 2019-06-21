@@ -77,7 +77,8 @@ A sample config.json is included in the source; here's an explanation of the con
 * **criticalFooterStartComment**, **criticalFooterEndComment** - Critical path CSS performs best when your non-critical CSS is loaded asynchronously.  Thus as shown above in the Usage section when you link to your non-critical CSS you should do so like this:
 
 `
-<link rel="preload" href="https://xyz.cloudfront.net/css/combo-min.css" type="text/css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://xyz.cloudfront.net/css/combo-min.css" type="text/css"></noscript>`
+<link rel="preload" href="https://xyz.cloudfront.net/css/combo-min.css" type="text/css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://xyz.cloudfront.net/css/combo-min.css" type="text/css"></noscript>
+`
 
 If you link to your non-critical style sheet(s) this way then you should put a criticalFooterStartComment and criticalFooterEndComment before the `</body>` tag of your HTML.  This way JPack will inject a piece of JavaScript into the file so as to asynchronously load your non-critical CSS.  As with the header comments, they should both have their own line (e.g. no other code on the same line). Required only if you want to asynchronously load your non-critical CSS using JavaScript.
 
