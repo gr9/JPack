@@ -1,0 +1,49 @@
+{
+	"devURL" : "https://dev.my-un-optimized-website.com",
+	"devDocRoot" : "/Users/me/Documents/MyWebsite/trunk/",
+	"prodDocRoot" : "/usr/share/apache-tomcat-8.5.39/webapps/ROOT/",
+	"minifyJSFiles" : [
+							{"js/fileNameBeforeMinification.js" : "js/fileNameAfterMinification-min.js"},
+							{"js/anotherJSFile.js" : "js/anotherJSFile-min.js"}
+						],
+	"minifyCSSFiles" : [
+							{"css/fileNameBeforeMinification.css" : "css/fileNameAfterMinification-min.css"},
+							{"css/anotherCSSFile.css" : "css/anotherCSSFile-min.css"}
+						],
+	"minifyJSONFiles" : [],
+	"minifyHTMLFiles" : [],
+	"minifyXMLFiles" : [],
+	"prodSFTPHost" : "www.my-soon-to-be-optimized-website.com",
+	"prodSFTPUser" : "linuxUserName",
+	"prodSFTPKeyFile" : "/path/to/pem-file.pem",
+	"prodSFTPPassword" : "otherWiseYouCanUseAPassword",
+	"concatenateJSFiles" : [
+							{"js/fileNameAfterConcatenation.js" : ["js/fileNameAfterMinification-min.js", "js/anotherJSFile-min.js"]}, 
+							{"js/AnotherConcatenatedFile-combo-min.js" : ["js/file1.js", "js/file2.js", "js/file3.js"]}
+						],
+	"concatenateCSSFiles" : [{"css/combo-min.css" : ["css/fileNameAfterMinification-min.css", "css/anotherCSSFile-min.css"]}],
+	"concatenateJSONFiles" : [],
+	"prodS3Bucket" : "my-bucket-name",
+	"prodS3KeyPropertiesFile" : "/path/to/props-file.props",
+	"prodS3Region" : "us-west-1",
+	"uploadJSTo" : "S3",
+	"uploadCSSTo" : "S3,SFTP",
+	"uploadJSONTo" : "SFTP",
+	"uploadXMLTo" : "",
+	"uploadHTMLTo" : "",
+	"criticalInlineCSSFiles" : [
+									{"web" : "/web/path/relative-to/devURL", "local" : "local/path/to/same-file.jsp"},
+									{"web" : "/contact.aspx", "local" : "contact.aspx"},
+									{"web" : "/media-kit.php", "local" : "media-kit.php"}
+								],
+	"pathToCriticalBinary" : "/usr/local/bin/critical",
+	"NODE_PATH" : "/usr/local/lib/node",
+	"PATH" : "/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin",
+	"criticalHeaderStartComment" : "<!--Critical CSS Starts Here-->",
+	"criticalHeaderEndComment" : "<!--Critical CSS Ends Here-->",
+	"criticalFooterStartComment" : "<!--Critical Script Starts Here-->",
+	"criticalFooterEndComment" : "<!--Critical Script Ends Here -->",
+	"uploadCriticalTo" : "SFTP",
+	"invalidateCloudfrontDistributionID" : "xyzABC",
+	"cloudfrontKeyPropertiesFile" : "/path/to/props-file.props"
+}

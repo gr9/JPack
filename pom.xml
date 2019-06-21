@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.reecegriffin.jpack</groupId>
+  <artifactId>JPack</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>JPack</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <repositories>
+    
+    <repository>
+        <id>netbeansrepository</id>
+        <url>http://bits.netbeans.org/maven2/</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </repository>
+            
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>com.google.javascript</groupId>
+    	<artifactId>closure-compiler</artifactId>
+    	<version>v20190528</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.amazonaws</groupId>
+    	<artifactId>aws-java-sdk</artifactId>
+    	<version>1.11.575</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.jcraft</groupId>
+    	<artifactId>jsch</artifactId>
+    	<version>0.1.55</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.yahoo.platform.yui</groupId>
+    	<artifactId>yuicompressor</artifactId>
+    	<version>2.4.8</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.json</groupId>
+    	<artifactId>json</artifactId>
+    	<version>20180813</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.netbeans.api</groupId>
+    	<artifactId>org-openide-util</artifactId>
+    	<version>RELEASE801</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.netbeans.api</groupId>
+    	<artifactId>org-openide-filesystems</artifactId>
+    	<version>RELEASE802</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.googlecode.htmlcompressor</groupId>
+    	<artifactId>htmlcompressor</artifactId>
+    	<version>1.5.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-io</groupId>
+    	<artifactId>commons-io</artifactId>
+    	<version>2.6</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-lang</groupId>
+    	<artifactId>commons-lang</artifactId>
+    	<version>2.6</version>
+    </dependency>
+  </dependencies>
+</project>
