@@ -1,16 +1,16 @@
 # JPack
-A Java based web packaging tool for optimizing assets for websites and enhancing Google Pagespeed Insights (PSI) score.  Although written in Java, this software is designed to work for any web stack that can render HTML e.g. .NET, RoR, PHP, JSP, handlebars etc...  But was built with projects in mind that have server side code.  You can build this project using Maven, or download a pre-built binary here: [https://github.com/gr9/JPack/releases/download/v0.1-beta/JPack.jar]()
+A Java based web packaging tool for optimizing assets for websites and enhancing Google Pagespeed Insights (PSI) score.  Although written in Java, this software is designed to work for any web stack that can render HTML e.g. .NET, RoR, PHP, JSP, handlebars etc...  But was built with projects in mind that have server side code.  You can build this project using Maven, or download a pre-built binary here: [https://github.com/gr9/JPack/releases/download/v0.1-beta/JPack.jar](https://github.com/gr9/JPack/releases/download/v0.1-beta/JPack.jar)
 
-This isn't designed to replace something like Webpack and in many cases isn't going to stack up against something as well supported or as featureful as Webpack.  However, Webpack is best positioned for using the Node stack, and when you're looking at optimizing for web stacks that have a server side component (that isn't node) this can be tricky: [https://stackoverflow.com/questions/47833812/webpack-with-jsp-index-file]() particularly for inlining critical path CSS.  Ironically though, the best (only?) tools for inlining critical path CSS are all npm modules.  Google Closure Compiler does work best when run with the JVM installed though - so its 6 of one & half a dozen of the other.
+This isn't designed to replace something like Webpack and in many cases isn't going to stack up against something as well supported or as featureful as Webpack.  However, Webpack is best positioned for using the Node stack, and when you're looking at optimizing for web stacks that have a server side component (that isn't node) this can be tricky: [https://stackoverflow.com/questions/47833812/webpack-with-jsp-index-file](https://stackoverflow.com/questions/47833812/webpack-with-jsp-index-file) particularly for inlining critical path CSS.  Ironically though, the best (only?) tools for inlining critical path CSS are all npm modules.  Google Closure Compiler does work best when run with the JVM installed though - so its 6 of one & half a dozen of the other.
 
 The concept is pretty simple, you develop in your dev environment - for which you need human readable code (e.g. not minified JS files, or critical path inline CSS).  Once you have it working how you want though - you need to pack it up for speed, and don't need to work with the code directly after its been deployed to prod.  To this end, JPack will take the files you want optimized from your dev environment and deploy them to prod for you in a way that will help your PSI score.
 
 ## What It Does
 
 * Minify JS, CSS, XML, HTML, and JSON
-* Compile JS files to optimize them and issue errors, warnings using [https://developers.google.com/closure/compiler/]() Google Closure Compiler (e.g. unreachable code branch etc...)
+* Compile JS files to optimize them and issue errors, warnings using [https://developers.google.com/closure/compiler/](https://developers.google.com/closure/compiler/) Google Closure Compiler (e.g. unreachable code branch etc...)
 * Concatenates JS, CSS, and JSON files
-* Performs critical path CSS inlining [https://www.npmjs.com/package/critical]()
+* Performs critical path CSS inlining [https://www.npmjs.com/package/critical](https://www.npmjs.com/package/critical)
 * Calculates Space Savings in minified files
 * Automatically deploy files to SFTP, AWS S3 & Cloudfront
 * Sets S3 metadada to include cache policies recommended by PSI, an optionally allows you to invalidate Cloudfront cache if you're using S3 as the origin for your distribution
@@ -22,7 +22,7 @@ The concept is pretty simple, you develop in your dev environment - for which yo
 
 ## Requirements
 1. config.json must be either in the same folder that JPack is run from, or the path to config.json must be passed as a command line argument (see Usage below)
-2. Node and critical CLI have to be installed on the dev environment that you run JPack from - [https://github.com/addyosmani/critical]() Required, only if you want to use the critical path CSS features
+2. Node and critical CLI have to be installed on the dev environment that you run JPack from - [https://github.com/addyosmani/critical](https://github.com/addyosmani/critical) Required, only if you want to use the critical path CSS features
 3. Java Runtime Environment (JRE) must be installed on your dev environment that you run JPack from
 
 ## Usage
@@ -86,6 +86,6 @@ If you link to your non-critical style sheet(s) this way then you should put a c
 * **cloudfrontKeyPropertiesFile** - Absolute file path to an AWS properties file for an IAM role or Root key that has permissions to write to invalidate Cloudfront distribution specified in invalidateCloudfrontDistributionID.  First line of the props file should be `accessKey=xyz` second line of the file should be `secretKey=abc`. Optional, only required if you want to invalidate your Cloudfront cache
 
 ## Credits
-* [https://github.com/addyosmani/critical]() - a great piece of web tooling
-* [https://github.com/Chris2011/minifierbeans]() - I borrowed a decent amount of code from this person; basically the same thing as JPack except its a netbeans plugin rather than a general purpose devops tool; and I added some concatenation, AWS & SFTP features
+* [https://github.com/addyosmani/critical](https://github.com/addyosmani/critical) - a great piece of web tooling
+* [https://github.com/Chris2011/minifierbeans](https://github.com/Chris2011/minifierbeans) - I borrowed a decent amount of code from this person; basically the same thing as JPack except its a netbeans plugin rather than a general purpose devops tool; and I added some concatenation, AWS & SFTP features
        
