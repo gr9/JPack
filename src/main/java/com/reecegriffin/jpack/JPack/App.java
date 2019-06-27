@@ -238,7 +238,8 @@ public class App {
 		for(int i = 0; i < criticalInlineCSSFiles.length(); i++){
 			JSONObject webPage = criticalInlineCSSFiles.getJSONObject(i);
 			String criticalCSS = App.getCriticalCSS(config, config.getString("devURL")+webPage.getString("web"));
-			App.injectCritical(config, config.getString("devDocRoot")+webPage.getString("local"), criticalCSS);	
+			App.injectCritical(config, config.getString("devDocRoot")+webPage.getString("local"), 
+					criticalCSS+(config.getJSONObject("criticalCSSAdditions").has(webPage.getString("local")) ? config.getJSONObject("criticalCSSAdditions").getString(webPage.getString("local")) : "") );	
 			boolean uploaded = false;
 			if(config.getString("uploadCriticalTo").indexOf("SFTP") > -1){
 				System.out.println("SFTP upload: "+config.getString("devDocRoot")+webPage.getString("local")+".critical.html, to: "+config.getString("prodDocRoot")+webPage.getString("local"));

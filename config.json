@@ -43,6 +43,9 @@
 	"criticalHeaderEndComment" : "<!--Critical CSS Ends Here-->",
 	"criticalFooterStartComment" : "<!--Critical Script Starts Here-->",
 	"criticalFooterEndComment" : "<!--Critical Script Ends Here -->",
+	"criticalCSSAdditions" : {
+						"local/path/to/same-file.jsp" : ".someExtraCSSToAddToYourCriticalCSS{width:100%;}"
+							},
 	"uploadCriticalTo" : "SFTP",
 	"invalidateCloudfrontDistributionID" : "xyzABC",
 	"cloudfrontKeyPropertiesFile" : "/path/to/props-file.props"
