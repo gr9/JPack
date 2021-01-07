@@ -328,9 +328,15 @@ public class App {
 	//otherwise all you're really doing is improving your PSI rank without necessarily improving the user experience for all work flows.
 	public static String getCriticalCSS(JSONObject config, String url) throws Exception{
 		ProcessBuilder pb = new ProcessBuilder(config.getString("pathToCriticalBinary"), url);
-		Map<String, String> envs = pb.environment();
-		envs.put("NODE_PATH", config.getString("NODE_PATH"));
-		envs.put("PATH", config.getString("PATH"));
+		if(config.has("NODE_PATH") || config.has("PATH")) {
+			Map<String, String> envs = pb.environment();
+			if(config.has("NODE_PATH")) {
+				envs.put("NODE_PATH", config.getString("NODE_PATH"));
+			}
+			if(config.has("PATH")) {
+				envs.put("PATH", config.getString("PATH"));
+			}
+		}
 		StringBuilder sb = new StringBuilder();	
 		Process pr = pb.start(); 
 		BufferedReader br = null;

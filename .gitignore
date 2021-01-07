@@ -24,3 +24,4 @@ target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputF
 target/surefire-reports/com.reecegriffin.jpack.JPack.AppTest.txt
 target/surefire-reports/TEST-com.reecegriffin.jpack.JPack.AppTest.xml
 target/test-classes/com/reecegriffin/jpack/JPack/AppTest.class
+/target/
