@@ -49,9 +49,9 @@
     	<version>1.11.575</version>
     </dependency>
     <dependency>
-    	<groupId>com.jcraft</groupId>
+    	<groupId>com.github.mwiede</groupId>
     	<artifactId>jsch</artifactId>
-    	<version>0.1.55</version>
+    	<version>0.2.7</version>
     </dependency>
     <dependency>
     	<groupId>com.yahoo.platform.yui</groupId>
@@ -88,5 +88,38 @@
     	<artifactId>commons-lang</artifactId>
     	<version>2.6</version>
     </dependency>
+    <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.4.2</version>
+        <type>maven-plugin</type>
+    </dependency>
   </dependencies>
+  
+  <build>
+      <plugins>
+        <plugin>
+	         <artifactId>maven-assembly-plugin</artifactId>
+	         <groupId>org.apache.maven.plugins</groupId>
+	         <executions>
+	             <execution>
+	                  <phase>package</phase>
+	                  <goals>
+	                      <goal>single</goal>
+	                  </goals>
+	              </execution>
+	          </executions>
+	          <configuration>
+	               <archive>
+	                   <manifest>
+	                         <mainClass>com.reecegriffin.jpack.JPack.App</mainClass>
+	                   </manifest>
+	               </archive>
+	               <descriptorRefs>
+	                   <descriptorRef>jar-with-dependencies</descriptorRef>
+	              </descriptorRefs>
+	         </configuration>
+         </plugin>
+      </plugins>
+  </build>
 </project>
